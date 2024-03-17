@@ -22,8 +22,9 @@ plugins:
     config:
       host: localhost
       port: 5432
-      user: vuk
-      database: vuk-db
+      user: pagoda
+      database: pagoda
+      default_target_schema: dev
   utilities:
   - name: dbt-postgres
     variant: dbt-labs
@@ -31,6 +32,6 @@ plugins:
     config:
       host: localhost
       port: 5432
-      user: vuk
-      dbname: vuk-db
+      user: pagoda
+      dbname: pagoda
       schema: analitics_dev

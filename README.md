@@ -79,13 +79,13 @@ meltano config dbt-postgres set password <password>
 
 `meltano invoke dbt-postgres:deps`
 
-`meltano invoke dbt-postgres:test`
-
 `meltano invoke dbt-postgres:run` will load *analytics_dev* schema with transformed data
+
+`meltano invoke dbt-postgres:test`
 
 > Run
 
 `meltano install`
 
-`meltano run tap-csv target-postgres dbt-postgres:test dbt-postgres:run`
+`meltano run tap-csv target-postgres dbt-postgres:run dbt-postgres:test`
 

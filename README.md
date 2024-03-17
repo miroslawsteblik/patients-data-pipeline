@@ -5,8 +5,6 @@
 
 > Initialize
 
-Create new directory, create your venv, activate it and install meltano with pip 
-
 `mkdir <project>`
 
 `cd <project>`
@@ -19,14 +17,8 @@ Create meltano project
 
 `cd meltano_project`
 
-Download *synthea-with-dependencies.jar* file and copy to *synthea* directory
-
-Add `synthea.properties` 
-
-Run `java -jar synthea-with-dependencies.jar -c synthea.properties -p 1000`
-
-this will create csv files to `/output`
-
+Install Synthea `git clone https://github.com/synthetichealth/synthea.git`
+and save csv files
 
 > Add extractors and configure
 
@@ -35,7 +27,6 @@ this will create csv files to `/output`
  create `/extract/config.json` and set `meltano config tap-csv set csv_files_definition extract/config.json`
 
  `meltano config tap-csv test`
-
 
 > Add loaders and configure:
 
@@ -59,7 +50,7 @@ Testing [optional] `meltano invoke target-postgres`
 
 Testing [optional] `meltano run tap-csv target-postgres` will load *dev* schema with raw data
 
-> Transformers DBT and configure
+> Add transformer DBT and configure
 
 `meltano add utility dbt-postgres`
 
@@ -75,6 +66,8 @@ meltano config dbt-postgres set password <password>
 
 >> Additional 
 
+`meltano invoke dbt-postgres:initialize`
+
 1. Add `packages.yml` within `/transform` and configure for tests
 2. Add `/person` and within: `person.sql` and `sources.yml`
 3. Add `schema.yml` within `/models`   
@@ -82,17 +75,13 @@ meltano config dbt-postgres set password <password>
 
 `meltano invoke dbt-postgres:build`
 
-`meltano invoke dbt-postgres:initialize`
-
 `meltano invoke dbt-postgres:compile`
 
 `meltano invoke dbt-postgres:deps`
 
-`meltano invoke dbt-postgres:debug`
+`meltano invoke dbt-postgres:test`
 
 `meltano invoke dbt-postgres:run` will load *analytics_dev* schema with transformed data
-
-`meltano invoke dbt-postgres:test`
 
 > Run
 

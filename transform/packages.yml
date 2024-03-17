@@ -1,0 +1,8 @@
+packages:
+# dbt-expectation - used to perform logic tests
+  - package: calogica/dbt_expectations
+    version: 0.10.3
+ 
+   # <see https://github.com/calogica/dbt-expectations/releases/latest> for the latest version tag
+
+  

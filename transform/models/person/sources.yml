@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dev # tables copied from source DB
+    schema: dev
+    tables:
+      - name: patients
+
+# Sources: raw data that is already loaded - usually comes from a data loader

@@ -1,9 +1,6 @@
 [
     {
         "entity": "patients",
-        "path": "/home/miroslaw_steblik/DataOps/warehouse/synthea/output/csv/patients.csv",
-        "keys": [
-            "Id"
-        ]
+        "path": "/home/miroslaw_steblik/DataOps/warehouse/synthea/output/short_output/patients.csv"
     }
 ]
